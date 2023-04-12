@@ -16,10 +16,10 @@ export default {
         }
     },
     created() {
-        console.log(this.$route);
-        const {id} = this.$route.params
-        this.id = id
-        console.log(id);
+        // console.log(this.$route);
+        // const {id} = this.$route.params
+        // this.id = id
+        // console.log(id);
     },
 }
 </script>
