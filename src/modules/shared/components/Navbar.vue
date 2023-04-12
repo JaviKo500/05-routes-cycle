@@ -1,8 +1,8 @@
 <template>
     <div>
-        <router-link to ="/">Pokemon List</router-link>
-        <router-link to ="/10">Pokemon id</router-link>
-        <router-link to ="/about">About</router-link>
+        <router-link :to ="{name: 'home'}">Pokemon List</router-link>
+        <router-link :to ="{name: 'pokemon-id', params: { id: 100 } }">Pokemon id</router-link>
+        <router-link :to ="{name: 'about'}">About</router-link>
     </div>
 </template>
 <style scoped>
