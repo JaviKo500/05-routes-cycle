@@ -42,6 +42,29 @@ const routes = [
             },
         ]
     },
+    {
+        path: '/dbz',
+        name: 'dbz',
+        component: () => import( /* webpackChunkName: "DBZLayout" */ '@/modules/dbz/layouts/DragonBallZLayout' ),
+        children: [
+            {
+                path: 'characters',
+                name: 'dbz-characters',
+                component: () => import(/* webpackChunkName: "DBZCharacter" */ '@/modules/dbz/pages/Characters'),
+            },
+            {
+                path: 'about',
+                name: 'dbz-about',
+                component: () => import(/* webpackChunkName: "DBZAbout" */ '@/modules/dbz/pages/About'),
+            },
+            {
+                path: '',
+                redirect: {
+                    name: 'dbz-characters'
+                }
+            },
+        ]
+    },
     { 
         path: '/:pathMatch(.*)*', 
         component: () => import(/* webpackChunkName: "NotPageFound" */ '@/modules/shared/pages/NotPageFound'),
