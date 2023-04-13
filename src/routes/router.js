@@ -21,12 +21,12 @@ const routes = [
                 component: () => import(/* webpackChunkName: "AboutPage" */ '@/modules/pokemon/pages/AboutPage')
             },
             { 
-                path: 'pokemonid/:id', 
+                path: 'pokemonid', 
                 name: 'pokemon-id',
                 component: () => import(/* webpackChunkName: "PokemonPage" */ '@/modules/pokemon/pages/PokemonPage'),
                 props: ( route ) => {
                     console.log(route)
-                    const id = Number(route.params.id);
+                    const id = Number(route.query.id);
                     return isNaN( id ) 
                         ? { id:1 } 
                         : {
